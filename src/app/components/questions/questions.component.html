@@ -1,1 +1,105 @@
-<p>questions works!</p>
+<mat-card>
+  <mat-card-title>Настройте критерии подбора мониторов</mat-card-title>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Производитель</mat-label>
+    <mat-select [(value)]="selected">
+      <mat-option>Не выбирать</mat-option>
+      <mat-option value="option1">Samsung</mat-option>
+      <mat-option value="option2">Hp</mat-option>
+      <mat-option value="option3">Lg</mat-option>
+      <mat-option value="option4">Dell</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <form class="example-form">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Мин. цена, ₽</mat-label>
+      <input type="number" matInput>
+    </mat-form-field>
+    &nbsp;
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Макс. цена, ₽</mat-label>
+      <input type="number" matInput >
+    </mat-form-field>
+  </form>
+
+  <form class="example-form">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Мин. диагональ, дюйм</mat-label>
+      <input type="number" matInput>
+    </mat-form-field>
+    &nbsp;
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Макс. диагональ, дюйм</mat-label>
+      <input type="number" matInput >
+    </mat-form-field>
+  </form>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Макс. разрешение</mat-label>
+    <mat-select [(value)]="selected2">
+      <mat-option>Не выбирать</mat-option>
+      <mat-option value="option1">1920x1080</mat-option>
+      <mat-option value="option2">1920x1200</mat-option>
+      <mat-option value="option3">2560x1440</mat-option>
+      <mat-option value="option4">3840x2160</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <br>
+
+  <mat-form-field appearance="fill" style="min-width: 25%;">
+    <mat-label>Макс. частота обновления кадров, Гц</mat-label>
+    <mat-select [(value)]="selected3">
+      <mat-option>Не выбирать</mat-option>
+      <mat-option value="option1">60</mat-option>
+      <mat-option value="option2">120</mat-option>
+      <mat-option value="option3">144</mat-option>
+      <mat-option value="option4">240</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <br>
+
+  <mat-form-field appearance="fill"  style="min-width: 20%;">
+    <mat-label>Тип матрицы экрана</mat-label>
+    <mat-select [(value)]="selected4">
+      <mat-option>Не выбирать</mat-option>
+      <mat-option value="option1">*VA</mat-option>
+      <mat-option value="option2">IPS</mat-option>
+      <mat-option value="option3">TN</mat-option>
+      <mat-option value="option4">OLED</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <form class="example-form">
+    <mat-form-field class="example-full-width" appearance="fill" style="min-width: 18%;">
+      <mat-label>Мин. время отклика, сек</mat-label>
+      <input type="number" matInput>
+    </mat-form-field>
+    &nbsp;
+    <mat-form-field class="example-full-width" appearance="fill" style="min-width: 18%;">
+      <mat-label>Макс. время отклика, сек</mat-label>
+      <input type="number" matInput >
+    </mat-form-field>
+  </form>
+
+  <mat-slide-toggle color="primary" style="margin-bottom: 15px">Игровая модель</mat-slide-toggle>
+
+  <form class="example-form">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Мин. контрастность</mat-label>
+      <input type="number" matInput>
+    </mat-form-field>
+    &nbsp;
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Макс. контрастность</mat-label>
+      <input type="number" matInput >
+    </mat-form-field>
+  </form>
+
+  <mat-card-actions>
+    <button mat-raised-button color="primary">Подобрать</button>
+  </mat-card-actions>
+</mat-card>

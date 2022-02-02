@@ -9,6 +9,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './components/header/header.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
+import {MatSelectModule} from '@angular/material/select';
+import {MatInputModule} from '@angular/material/input';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,11 @@ import {MatButtonModule} from '@angular/material/button';
     BrowserModule,
     AppRoutingModule,
     NoopAnimationsModule,
-    MatButtonModule
+    MatButtonModule,
+    MatCardModule,
+    MatSelectModule,
+    MatInputModule,
+    MatSlideToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

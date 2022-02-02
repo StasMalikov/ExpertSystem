@@ -6,6 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./questions.component.css']
 })
 export class QuestionsComponent implements OnInit {
+  selected = '';
+  selected2 = '';
+  selected3 = '';
+  selected4 = '';
 
   constructor() { }
 
