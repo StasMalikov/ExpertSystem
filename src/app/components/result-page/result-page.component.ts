@@ -7,6 +7,40 @@ export interface PeriodicElement {
   symbol: string;
 }
 
+export interface MonitorEntity {
+  name: string;
+  price: number;
+  manufacturer: string;
+  diagonal: string;
+  resolution: string;
+  updateFrequency: string;
+  matrixType: string;
+  responseTime: number;
+  contrastValue: number;
+}
+
+const ALL_MONITORS: MonitorEntity[] = [
+  { name: 'string', price: 1, manufacturer: 'string', diagonal: 'string',
+    resolution: 'string', updateFrequency: 'string', matrixType: 'string',
+    responseTime: 1, contrastValue: 1},
+
+  { name: 'string', price: 1, manufacturer: 'string', diagonal: 'string',
+    resolution: 'string', updateFrequency: 'string', matrixType: 'string',
+    responseTime: 1, contrastValue: 1},
+
+  { name: 'string', price: 1, manufacturer: 'string', diagonal: 'string',
+    resolution: 'string', updateFrequency: 'string', matrixType: 'string',
+    responseTime: 1, contrastValue: 1},
+
+  { name: 'string', price: 1, manufacturer: 'string', diagonal: 'string',
+    resolution: 'string', updateFrequency: 'string', matrixType: 'string',
+    responseTime: 1, contrastValue: 1},
+
+  { name: 'string', price: 1, manufacturer: 'string', diagonal: 'string',
+    resolution: 'string', updateFrequency: 'string', matrixType: 'string',
+    responseTime: 1, contrastValue: 1}
+];
+
 const ELEMENT_DATA: PeriodicElement[] = [
   {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
   {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
@@ -26,8 +60,10 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./result-page.component.css']
 })
 export class ResultPageComponent implements OnInit {
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = ELEMENT_DATA;
+  displayedColumns: string[] = [  'name', 'price', 'manufacturer',
+    'diagonal', 'resolution', 'updateFrequency', 'matrixType',
+    'responseTime', 'contrastValue'];
+  dataSource = ALL_MONITORS;
   constructor() { }
 
   ngOnInit(): void {
