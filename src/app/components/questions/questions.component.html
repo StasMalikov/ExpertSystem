@@ -3,42 +3,43 @@
 
   <mat-form-field appearance="fill">
     <mat-label>Производитель</mat-label>
-    <mat-select [(value)]="selected">
+    <mat-select [(value)]="manufacturer">
       <mat-option>Не выбирать</mat-option>
-      <mat-option value="option1">Samsung</mat-option>
-      <mat-option value="option2">Hp</mat-option>
-      <mat-option value="option3">Lg</mat-option>
-      <mat-option value="option4">Dell</mat-option>
+      <mat-option value="ASUS">ASUS</mat-option>
+      <mat-option value="MSI">MSI</mat-option>
+      <mat-option value="Xiaomi">Xiaomi</mat-option>
+      <mat-option value="GIGABYTE">GIGABYTE</mat-option>
+      <mat-option value="Acer">Acer</mat-option>
     </mat-select>
   </mat-form-field>
 
   <form class="example-form">
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label>Мин. цена, ₽</mat-label>
-      <input type="number" matInput>
+      <input type="number" [(ngModel)]="minPrice" name="minPrice" matInput>
     </mat-form-field>
     &nbsp;
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label>Макс. цена, ₽</mat-label>
-      <input type="number" matInput >
+      <input type="number" [(ngModel)]="maxPrice" name="maxPrice" matInput >
     </mat-form-field>
   </form>
 
   <form class="example-form">
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label>Мин. диагональ, дюйм</mat-label>
-      <input type="number" matInput>
+      <input type="number" [(ngModel)]="minDiagonal" name="minDiagonal" matInput>
     </mat-form-field>
     &nbsp;
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label>Макс. диагональ, дюйм</mat-label>
-      <input type="number" matInput >
+      <input type="number" [(ngModel)]="maxDiagonal" name="maxDiagonal" matInput >
     </mat-form-field>
   </form>
 
   <mat-form-field appearance="fill">
     <mat-label>Макс. разрешение</mat-label>
-    <mat-select [(value)]="selected2">
+    <mat-select [(value)]="resolution">
       <mat-option>Не выбирать</mat-option>
       <mat-option value="option1">1920x1080</mat-option>
       <mat-option value="option2">1920x1200</mat-option>
@@ -51,7 +52,7 @@
 
   <mat-form-field appearance="fill" style="min-width: 25%;">
     <mat-label>Макс. частота обновления кадров, Гц</mat-label>
-    <mat-select [(value)]="selected3">
+    <mat-select [(value)]="updateFrequency">
       <mat-option>Не выбирать</mat-option>
       <mat-option value="option1">60</mat-option>
       <mat-option value="option2">120</mat-option>
@@ -64,7 +65,7 @@
 
   <mat-form-field appearance="fill"  style="min-width: 20%;">
     <mat-label>Тип матрицы экрана</mat-label>
-    <mat-select [(value)]="selected4">
+    <mat-select [(value)]="matrixType">
       <mat-option>Не выбирать</mat-option>
       <mat-option value="option1">*VA</mat-option>
       <mat-option value="option2">IPS</mat-option>
@@ -76,30 +77,30 @@
   <form class="example-form">
     <mat-form-field class="example-full-width" appearance="fill" style="min-width: 18%;">
       <mat-label>Мин. время отклика, сек</mat-label>
-      <input type="number" matInput>
+      <input type="number" [(ngModel)]="minResponseTime" name="minResponseTime" matInput>
     </mat-form-field>
     &nbsp;
     <mat-form-field class="example-full-width" appearance="fill" style="min-width: 18%;">
       <mat-label>Макс. время отклика, сек</mat-label>
-      <input type="number" matInput >
+      <input type="number" [(ngModel)]="maxResponseTime" name="maxResponseTime" matInput >
     </mat-form-field>
   </form>
 
-  <mat-slide-toggle color="primary" style="margin-bottom: 15px">Игровая модель</mat-slide-toggle>
+  <mat-slide-toggle [(ngModel)]="playModelChecked" color="primary" style="margin-bottom: 15px">Игровая модель</mat-slide-toggle>
 
   <form class="example-form">
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label>Мин. контрастность</mat-label>
-      <input type="number" matInput>
+      <input type="number" [(ngModel)]="minContrastValue" name="minContrastValue" matInput>
     </mat-form-field>
     &nbsp;
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label>Макс. контрастность</mat-label>
-      <input type="number" matInput >
+      <input type="number" [(ngModel)]="maxContrastValue" name="maxContrastValue" matInput >
     </mat-form-field>
   </form>
 
   <mat-card-actions>
-    <button mat-raised-button color="primary">Подобрать</button>
+    <button mat-raised-button color="primary" (click)="showResults()">Подобрать</button>
   </mat-card-actions>
 </mat-card>

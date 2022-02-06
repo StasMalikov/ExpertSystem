@@ -14,6 +14,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatTableModule} from '@angular/material/table';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -23,17 +24,18 @@ import {MatTableModule} from '@angular/material/table';
     ResultPageComponent,
     HeaderComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    NoopAnimationsModule,
-    MatButtonModule,
-    MatCardModule,
-    MatSelectModule,
-    MatInputModule,
-    MatSlideToggleModule,
-    MatTableModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        NoopAnimationsModule,
+        MatButtonModule,
+        MatCardModule,
+        MatSelectModule,
+        MatInputModule,
+        MatSlideToggleModule,
+        MatTableModule,
+        FormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

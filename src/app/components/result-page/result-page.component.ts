@@ -1,17 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
-}
-
 export interface MonitorEntity {
   name: string;
   price: number;
   manufacturer: string;
-  diagonal: string;
+  diagonal: number;
   resolution: string;
   updateFrequency: string;
   matrixType: string;
@@ -20,39 +13,48 @@ export interface MonitorEntity {
 }
 
 const ALL_MONITORS: MonitorEntity[] = [
-  { name: 'string', price: 1, manufacturer: 'string', diagonal: 'string',
-    resolution: 'string', updateFrequency: 'string', matrixType: 'string',
-    responseTime: 1, contrastValue: 1},
+  { name: 'ASUS VA27EHE', price: 13500, manufacturer: 'ASUS', diagonal: 27,
+    resolution: '1920x1080', updateFrequency: '60', matrixType: 'IPS',
+    responseTime: 5, contrastValue: 1000},
 
-  { name: 'string', price: 1, manufacturer: 'string', diagonal: 'string',
-    resolution: 'string', updateFrequency: 'string', matrixType: 'string',
-    responseTime: 1, contrastValue: 1},
+  { name: 'Optix MAG322CQR', price: 35800, manufacturer: 'MSI', diagonal: 31.5,
+    resolution: '2560x1440', updateFrequency: '165', matrixType: '*VA',
+    responseTime: 1, contrastValue: 100000000},
 
-  { name: 'string', price: 1, manufacturer: 'string', diagonal: 'string',
-    resolution: 'string', updateFrequency: 'string', matrixType: 'string',
-    responseTime: 1, contrastValue: 1},
+  { name: 'Mi Curved Gaming', price: 33600, manufacturer: 'Xiaomi', diagonal: 34,
+    resolution: '3840x2160', updateFrequency: '144', matrixType: '*VA',
+    responseTime: 4, contrastValue: 3000},
 
-  { name: 'string', price: 1, manufacturer: 'string', diagonal: 'string',
-    resolution: 'string', updateFrequency: 'string', matrixType: 'string',
-    responseTime: 1, contrastValue: 1},
+  { name: 'M27Q', price: 32650, manufacturer: 'GIGABYTE', diagonal: 27,
+    resolution: '2560x1440', updateFrequency: '170', matrixType: 'IPS',
+    responseTime: 0.5, contrastValue: 100000000},
 
-  { name: 'string', price: 1, manufacturer: 'string', diagonal: 'string',
-    resolution: 'string', updateFrequency: 'string', matrixType: 'string',
-    responseTime: 1, contrastValue: 1}
+  { name: 'Nitro RG241YPbiipx', price: 16500, manufacturer: 'Acer', diagonal: 23.8,
+    resolution: '1920x1080', updateFrequency: '165', matrixType: 'IPS',
+    responseTime: 1, contrastValue: 100000000},
+
+  { name: 'ASUS VA21EHE', price: 12000, manufacturer: 'ASUS', diagonal: 21,
+    resolution: '1920x1080', updateFrequency: '120', matrixType: 'TN',
+    responseTime: 2, contrastValue: 1000},
+
+  { name: 'Optix MAG212CQR', price: 25800, manufacturer: 'MSI', diagonal: 21,
+    resolution: '2560x1440', updateFrequency: '120', matrixType: 'TN',
+    responseTime: 1, contrastValue: 100000},
+
+  { name: 'Mi Curved Gaming Start', price: 13600, manufacturer: 'Xiaomi', diagonal: 21,
+    resolution: '1920x1080', updateFrequency: '80', matrixType: '*VA',
+    responseTime: 2, contrastValue: 2000},
+
+  { name: 'M50Q', price: 61000, manufacturer: 'GIGABYTE', diagonal: 50,
+    resolution: '3840x2160', updateFrequency: '170', matrixType: 'IPS',
+    responseTime: 0.5, contrastValue: 1000000},
+
+  { name: 'Nitro RG271YPbiipx', price: 23564, manufacturer: 'Acer', diagonal: 27,
+    resolution: '1920x1080', updateFrequency: '165', matrixType: 'IPS',
+    responseTime: 1, contrastValue: 100000}
 ];
 
-const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C'},
-  {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
-  {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
-  {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
-  {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
-];
+let sortedMonitors: MonitorEntity[];
 
 @Component({
   selector: 'app-result-page',
