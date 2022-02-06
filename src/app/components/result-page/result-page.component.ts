@@ -54,10 +54,22 @@ export class ResultPageComponent implements OnInit {
   displayedColumns: string[] = [  'name', 'price', 'manufacturer',
     'diagonal', 'resolution', 'updateFrequency', 'matrixType',
     'responseTime', 'contrastValue'];
-  dataSource = ALL_MONITORS;
+  dataSource: MonitorEntity[] = [];
   constructor() { }
 
   ngOnInit(): void {
+    // @ts-ignore
+    let data: string[] = JSON.parse(localStorage.getItem("sortedMonitorsNames"));
+    this.dataSource = [];
+    for (let i = 0; i < data.length; i++) {
+      for (let j = 0; j < ALL_MONITORS.length; j++) {
+        if (data[i].localeCompare(ALL_MONITORS[j].name) == 0) {
+          this.dataSource.push(ALL_MONITORS[j]);
+        }
+      }
+    }
+
+    //console.log(data);
   }
 
 }

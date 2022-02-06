@@ -65,7 +65,7 @@ export class QuestionsComponent implements OnInit {
   maxContrastValue: any;
   playModelChecked = false;
 
-  sortedMonitors: MonitorEntity[] = [];
+  sortedMonitors: string[] = [];
 
   constructor(private router: Router) { }
 
@@ -86,11 +86,11 @@ export class QuestionsComponent implements OnInit {
         this.checkNumericValues(ALL_MONITORS[i].contrastValue, this.minContrastValue, this.maxContrastValue) &&
         this.playModelCompare(ALL_MONITORS[i])
       ) {
-        this.sortedMonitors.push(ALL_MONITORS[i]);
+        this.sortedMonitors.push(ALL_MONITORS[i].name);
       }
     }
-    console.log(this.sortedMonitors);
-    //  this.router.navigate(['results']);
+    localStorage.setItem('sortedMonitorsNames', JSON.stringify(this.sortedMonitors));
+    this.router.navigate(['results']);
   }
 
   playModelCompare(entity: MonitorEntity): boolean {
@@ -116,7 +116,7 @@ export class QuestionsComponent implements OnInit {
   }
 
   checkStringValues(compareValue: string, inputValue: string): boolean {
-    console.log("checkStringValues: " + compareValue, inputValue)
+    //console.log("checkStringValues: " + compareValue, inputValue)
     if (inputValue == '' || inputValue == undefined) {
       return true;
     } else if (compareValue.localeCompare(inputValue) == 0) {

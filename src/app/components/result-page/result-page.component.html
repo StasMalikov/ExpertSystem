@@ -1,6 +1,8 @@
 <h4>Результаты подбора</h4>
 
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+<h5 *ngIf="dataSource.length == 0" style="color: red">Ничего не найдено!</h5>
+
+<table *ngIf="dataSource.length > 0" mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
   <!--- Note that these columns can be defined in any order.
         The actual rendered columns are set as a property on the row definition" -->
