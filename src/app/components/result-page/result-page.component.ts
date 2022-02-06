@@ -1,16 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-export interface MonitorEntity {
-  name: string;
-  price: number;
-  manufacturer: string;
-  diagonal: number;
-  resolution: string;
-  updateFrequency: string;
-  matrixType: string;
-  responseTime: number;
-  contrastValue: number;
-}
+import {MonitorEntity} from "../../models/MonitorEntity";
 
 const ALL_MONITORS: MonitorEntity[] = [
   { name: 'ASUS VA27EHE', price: 13500, manufacturer: 'ASUS', diagonal: 27,
